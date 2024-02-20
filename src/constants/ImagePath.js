@@ -16,4 +16,10 @@ export default {
 
 
 
+
+    /********************* Animations **********************/
+  biometric: require('../assets/lottieFiles/biometric.json'),
+
+
+
 };

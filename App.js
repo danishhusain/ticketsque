@@ -8,19 +8,15 @@ import Routes from './src/Navigation/Routes'
 import { persistor, store } from './src/ReduxToolkit/store'
 import FlashMessage from 'react-native-flash-message'
 import { moderateScale, textScale } from './src/styles/responsiveSize'
-// import SplashScreen from 'react-native-splash-screen'
 
 const App = () => {
 
-  // useEffect(() => {
-  //   SplashScreen.hide();
 
-  // })
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
+        <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
         <Routes />
-        <StatusBar backgroundColor={'#FFF'} barStyle={'dark-content'} />
         <FlashMessage
           titleStyle={{
             marginRight: moderateScale(5),

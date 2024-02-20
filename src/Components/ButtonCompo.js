@@ -2,22 +2,27 @@ import { StyleSheet, Text, View, TouchableOpacity, } from 'react-native';
 import React from 'react';
 import { useTheme } from '@react-navigation/native';
 import { moderateScale, scale, textScale, width } from '../styles/responsiveSize';
+import LinearGradient from 'react-native-linear-gradient';
 
 const ButtonCompo = ({ title, onPress, style, bgColor, textStyle, disabled }) => {
   const theme = useTheme().colors;
 
   return (
+
     <TouchableOpacity
-      style={[styles.TouchableOpacityStyle, style, {
-        backgroundColor: disabled ? '#CCCCCC' : theme.btnColor
-        
-      }]}
       onPress={onPress}
     >
-      <Text
-        style={[styles.textStyle, textStyle]}>
-        {title}
-      </Text>
+      <LinearGradient colors={['#8338ec', '#007fff']} start={{ x: 0, y: 0 }} end={{ x: 1.5, y: 0 }}
+        style={[styles.TouchableOpacityStyle, style, {
+          backgroundColor: disabled ? '#CCCCCC' : theme.btnColor
+
+        }]}
+      >
+        <Text
+          style={[styles.textStyle, textStyle]}>
+          {title}
+        </Text>
+      </LinearGradient>
     </TouchableOpacity>
   );
 };
@@ -30,7 +35,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: "center",
     justifyContent: 'center',
-    borderRadius: scale(10),
+    borderRadius: scale(6),
     height: moderateScale(48),
     paddingHorizontal: moderateScale(8),
   }, textStyle: {

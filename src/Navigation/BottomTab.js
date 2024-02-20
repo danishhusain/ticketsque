@@ -18,60 +18,60 @@ const BottomTab = () => {
     return (
         <Tab.Navigator
             initialRouteName="Home"
-            activeColor="blue"
-            inactiveColor="#3e2465"
+            activeColor="#007fff"
+            inactiveColor="grey"
             screenOptions={{
                 headerShown: false,
             }}
-            barStyle={{ backgroundColor: '#FFF', elevation: 4, }}
+            barStyle={{ backgroundColor: '#f7f7f7', elevation: 4, }}
         >
             <Tab.Screen name={NavigationStrings.HOME} component={Home}
                 options={{
                     tabBarLabel: 'Home',
-                    tabBarColor: 'blue',
+                    tabBarColor: '#007fff',
 
                     tabBarIcon: ({ color, focused }) => (
-                        <MaterialCommunityIcons name="home" size={26} color={focused ? 'blue' : null} />
+                        <MaterialCommunityIcons name="home" size={26} color={focused ? '#8338ec' : 'grey'} />
                     ),
                 }}
             />
             <Tab.Screen name={NavigationStrings.PROFILE} component={Profile}
                 options={{
                     tabBarLabel: 'Profile',
-                    tabBarColor: 'blue',
+                    tabBarColor: '#007fff',
 
                     tabBarIcon: ({ color, focused }) => (
-                        <MaterialCommunityIcons name="account" size={26} color={focused ? 'blue' : null} />
+                        <MaterialCommunityIcons name="account" size={26} color={focused ? '#8338ec' : 'grey'} />
                     ),
                 }}
             />
-            {/* <Tab.Screen name={NavigationStrings.TEST} component={Test}
+            <Tab.Screen name={NavigationStrings.TEST} component={Test}
                 options={{
                     tabBarLabel: 'Test',
-                    tabBarColor: 'blue',
+                    tabBarColor: '#007fff',
 
                     tabBarIcon: ({ color, focused }) => (
                         <View style={{ flex: 1, }}>
 
-                            <MaterialCommunityIcons name="email" size={26} color={focused ? 'blue' : null} />
+                            <MaterialCommunityIcons name="email" size={26} color={focused ? '#8338ec' : 'grey'} />
                         </View>
                     ),
                 }}
-            /> */}
-            {/* <Tab.Screen name={NavigationStrings.NOTIFICATION} component={Notification}
+            />
+            <Tab.Screen name={NavigationStrings.NOTIFICATION} component={Notification}
                 options={{
                     tabBarLabel: 'Notification',
-                    tabBarColor: 'blue',
+                    tabBarColor: '#007fff',
 
                     tabBarIcon: ({ color, focused }) => (
                         <View style={{ flex: 1, }}>
 
-                            <MaterialCommunityIcons name="email" size={26} color={focused ? 'blue' : null} />
+                            <MaterialCommunityIcons name="email" size={26} color={focused ? '#8338ec' : 'grey'} />
                         </View>
                     ),
                 }}
-            /> */}
-           
+            />
+
         </Tab.Navigator>
     )
 }

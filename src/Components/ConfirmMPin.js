@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { setPin } from '../utils/utils';
 import NavigationStrings from '../constants/NavigationStrings';
 import { showError, showSuccess } from '../utils/helperFunctions';
+import CustomLottieAnimation from './Animation';
 
 const ConfirmMPin = ({ route }) => {
     const { pin } = route?.params
@@ -65,6 +66,8 @@ const ConfirmMPin = ({ route }) => {
 
     return (
         <View style={styles.container}>
+            <CustomLottieAnimation source={require('../assets/lottieFiles/lock.json')} />
+
             <Keyboard
                 title={'Confirm PIN'}
                 pinLength={4}
@@ -79,6 +82,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: '#FFF'
+
     },
 });
 

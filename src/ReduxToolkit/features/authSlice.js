@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 initialState = {
   isAuthenticated: false,
-  isFirstTime: false,
+  isFirstTime: true,
   user: [],
 }
 
@@ -25,10 +25,16 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
       state.user = null;
     },
+    setIsFirstTime: (state, action) => {
+      return {
+        ...state,
+        isFirstTime: action.payload
+      };
+    },
   },
 });
 
-export const { loginSuccess, logoutSuccess ,setUser} = authSlice.actions;
+export const { loginSuccess, logoutSuccess, setUser,setIsFirstTime } = authSlice.actions;
 export const selectAuthState = (state) => state.auth;
 
 export default authSlice.reducer;

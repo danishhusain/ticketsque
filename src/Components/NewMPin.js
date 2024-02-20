@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Alert, } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, {  } from 'react';
+import { StyleSheet, View, } from 'react-native';
 import Keyboard from './Keyboard';
 import { useNavigation } from '@react-navigation/native';
 import NavigationStrings from '../constants/NavigationStrings';
-import ConfirmMPin from './ConfirmMPin';
+import CustomLottieAnimation from './Animation';
 
 const NewMPin = () => {
     const navigation = useNavigation();
     const goToScreen = (screen, props) => {
         navigation.navigate(`${screen}`, props);
     };
+
 
     const handlePinEntered = async (pin) => {
         goToScreen(NavigationStrings.CONFIRMMPIN, { pin: pin })
@@ -21,6 +21,7 @@ const NewMPin = () => {
 
     return (
         <View style={styles.container}>
+            <CustomLottieAnimation source={require('../assets/lottieFiles/lock.json')} />
             <Keyboard
                 title={'Set New PIN'}
                 pinLength={4}
@@ -35,6 +36,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: '#FFF'
+
     },
 });
 

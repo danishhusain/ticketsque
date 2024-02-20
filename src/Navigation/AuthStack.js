@@ -9,7 +9,7 @@ import MPin from '../Screens/AuthScreens/MPin/MPin'
 import NewMPin from '../Components/NewMPin'
 import ConfirmMPin from '../Components/ConfirmMPin'
 
-const AuthStack = (Stack, isFirstTime = false) => {
+const AuthStack = (Stack, isFirstTime) => {
     return (
         <>
             {isFirstTime && <Stack.Screen

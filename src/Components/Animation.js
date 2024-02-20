@@ -1,11 +1,11 @@
 import React, { useRef, useEffect } from 'react';
 import { View, StyleSheet, Button } from 'react-native';
 import LottieView from 'lottie-react-native';
-import ImagePath from '../../constants/ImagePath';
+import ImagePath from '../constants/ImagePath';
 
-const animationFile = ImagePath.biometric 
+const animationFile = ImagePath.biometric
 
-const Test = () => {
+const CustomLottieAnimation = ({ source }) => {
   const animationRef = useRef(null);
 
   useEffect(() => {
@@ -29,13 +29,13 @@ const Test = () => {
     <View style={styles.container}>
       <LottieView
         ref={animationRef}
-        source={animationFile}
+        source={source}
         style={styles.animation}
-        autoPlay={false} // Set to false for manual control
-        loop // Enable looping
-        speed={1.5} // Adjust animation speed (default is 1)
+        autoPlay={false}
+        loop
+        speed={1.5}
       />
-      <Button title={animationRef.current?.isPaused ? "Resume" : "Pause"} onPress={handlePlayPause} />
+      {/* <Button title={animationRef.current?.isPaused ? "Resume" : "Pause"} onPress={handlePlayPause} /> */}
     </View>
   );
 };
@@ -47,9 +47,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   animation: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
+    marginBottom: 100,
+    alignSelf: 'center'
+
   },
 });
 
-export default Test;
+export default CustomLottieAnimation;

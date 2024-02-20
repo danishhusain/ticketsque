@@ -380,7 +380,7 @@ const Keyboard = ({ title, pinLength, onPinEntered }) => {
                     <Text style={styles.numberText}>0</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.numberButton} onPress={handleCancelPress}>
-                    <MaterialCommunityIcons name="backspace-outline" size={28} />
+                    <MaterialCommunityIcons name="backspace-outline" size={28} color={'#000'} />
                 </TouchableOpacity>
             </View>
         </View>
@@ -397,14 +397,17 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 18,
         fontWeight: 'bold',
-        marginBottom: 20,
+        // marginBottom: 20,
+        color: '#000'
     },
     pinDisplay: {
         flexDirection: 'row',
-        marginBottom: '20%',
+        marginBottom: '10%',
     },
     pinText: {
         fontSize: 34,
+        color: '#000'
+
     },
     numberPad: {
         flexDirection: 'row',
@@ -420,9 +423,12 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         marginVertical: 10,
         backgroundColor: '#f0f0f0',
+
     },
     numberText: {
         fontSize: 24,
+        color: '#000'
+
     },
 });
 

@@ -11,8 +11,8 @@ const Stack = createNativeStackNavigator();
 
 const Routes = () => {
     const theme = useColorScheme() === 'dark' ? colors.dark : colors.light;
+    const { isFirstTime } = useSelector(state => state?.authReducer);
     const { isValid } = useSelector(state => state?.authReducer?.user);
-
 
     return (
         <NavigationContainer theme={theme}>
@@ -21,7 +21,7 @@ const Routes = () => {
             }}>
                 {
                     isValid ? <>{AppStack(Stack)}</>
-                        : <>{AuthStack(Stack)}</>
+                        : <>{AuthStack(Stack, isFirstTime)}</>
                 }
             </Stack.Navigator>
 
