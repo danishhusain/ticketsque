@@ -4,7 +4,6 @@ import { ApiRequest } from "./apiRequests";
 import { addPageData, setProducts } from "../ReduxToolkit/features/productSlice";
 
 export const LogInMethod = () => async dispatch => {
-    // console.log("LogInMethod_props")
     dispatch(setLoadingState(true));
 
     try {

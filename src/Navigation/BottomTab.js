@@ -5,6 +5,8 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Test from '../Screens/Test/Test';
 import Home from '../Screens/AppScreens/Home/Home';
 import NavigationStrings from '../constants/NavigationStrings';
+import Notification from '../Screens/AppScreens/Notification/Notification';
+import Profile from '../Screens/AppScreens/Profile/Profile';
 
 
 
@@ -33,7 +35,17 @@ const BottomTab = () => {
                     ),
                 }}
             />
-            <Tab.Screen name={NavigationStrings.TEST} component={Test}
+            <Tab.Screen name={NavigationStrings.PROFILE} component={Profile}
+                options={{
+                    tabBarLabel: 'Profile',
+                    tabBarColor: 'blue',
+
+                    tabBarIcon: ({ color, focused }) => (
+                        <MaterialCommunityIcons name="account" size={26} color={focused ? 'blue' : null} />
+                    ),
+                }}
+            />
+            {/* <Tab.Screen name={NavigationStrings.TEST} component={Test}
                 options={{
                     tabBarLabel: 'Test',
                     tabBarColor: 'blue',
@@ -45,7 +57,20 @@ const BottomTab = () => {
                         </View>
                     ),
                 }}
-            />
+            /> */}
+            {/* <Tab.Screen name={NavigationStrings.NOTIFICATION} component={Notification}
+                options={{
+                    tabBarLabel: 'Notification',
+                    tabBarColor: 'blue',
+
+                    tabBarIcon: ({ color, focused }) => (
+                        <View style={{ flex: 1, }}>
+
+                            <MaterialCommunityIcons name="email" size={26} color={focused ? 'blue' : null} />
+                        </View>
+                    ),
+                }}
+            /> */}
            
         </Tab.Navigator>
     )

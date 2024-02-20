@@ -5,6 +5,9 @@ export default {
     LOGIN: "Login",
     SIGNUP: "Signup",
     OTPVERIFICATION: "OtpVerification",
+    MPIN: "MPin",
+    NEWMPIN: "NewMPin",
+    CONFIRMMPIN: "ConfirmMPin",
 
     // AppNavigationStrings
     FORGOT_PASSWORD: "ForgotPassword",
