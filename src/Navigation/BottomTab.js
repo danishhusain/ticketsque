@@ -2,10 +2,8 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Test from '../Screens/Test/Test';
 import Home from '../Screens/AppScreens/Home/Home';
 import NavigationStrings from '../constants/NavigationStrings';
-import Notification from '../Screens/AppScreens/Notification/Notification';
 import Profile from '../Screens/AppScreens/Profile/Profile';
 
 
@@ -45,33 +43,7 @@ const BottomTab = () => {
                     ),
                 }}
             />
-            <Tab.Screen name={NavigationStrings.TEST} component={Test}
-                options={{
-                    tabBarLabel: 'Test',
-                    tabBarColor: '#007fff',
-
-                    tabBarIcon: ({ color, focused }) => (
-                        <View style={{ flex: 1, }}>
-
-                            <MaterialCommunityIcons name="email" size={26} color={focused ? '#8338ec' : 'grey'} />
-                        </View>
-                    ),
-                }}
-            />
-            <Tab.Screen name={NavigationStrings.NOTIFICATION} component={Notification}
-                options={{
-                    tabBarLabel: 'Notification',
-                    tabBarColor: '#007fff',
-
-                    tabBarIcon: ({ color, focused }) => (
-                        <View style={{ flex: 1, }}>
-
-                            <MaterialCommunityIcons name="email" size={26} color={focused ? '#8338ec' : 'grey'} />
-                        </View>
-                    ),
-                }}
-            />
-
+          
         </Tab.Navigator>
     )
 }

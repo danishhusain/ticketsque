@@ -8,8 +8,15 @@ import Routes from './src/Navigation/Routes'
 import { persistor, store } from './src/ReduxToolkit/store'
 import FlashMessage from 'react-native-flash-message'
 import { moderateScale, textScale } from './src/styles/responsiveSize'
+import SplashScreen from 'react-native-splash-screen'
 
 const App = () => {
+
+  useEffect(() => {
+    SplashScreen.hide();
+
+  })
+
 
 
   return (
